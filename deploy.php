@@ -15,7 +15,7 @@ try
 
 	if ($payload->ref === 'refs/heads/master')
 	{
-		$deploy = shell_exec("./deploy.sh");
+		$deploy = shell_exec("/var/www/deploy.sh");
 
 		file_put_contents('./logs/github.txt', $deploy.PHP_EOL, FILE_APPEND);
 	}
