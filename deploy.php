@@ -1,6 +1,6 @@
 <?php
 
-$logLocation = "./logs/github.txt";
+$logLocation    = "/var/www/logs/github.txt";
 $scriptLocation = "/var/www/deploy.sh"
 
 try
