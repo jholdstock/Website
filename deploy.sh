@@ -3,7 +3,6 @@
 echo "Changing folder"
 cd /var/www
 echo "Pulling changes"
-# Dont forget the -u the first time to remember remote and branch
-git pull
+git pull origin master
 echo "Checking out last version"
 git checkout .
