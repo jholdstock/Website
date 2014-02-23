@@ -1,6 +1,6 @@
 <?php
 
-shell_exec("/var/www/deploy.sh");
+shell_exec("/scripts/deploy.sh");
 
 echo "start";
 $output = shell_exec("/var/www/deploy.sh");
