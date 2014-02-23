@@ -5,12 +5,13 @@ $scriptLocation = "/var/www/deploy.sh"
 
 try
 {
+	echo("begin");
 	$logheader = "====================".PHP_EOL."New Request was made".PHP_EOL."====================".PHP_EOL.PHP_EOL;
-
+	echo("end");
 	$payload = $_REQUEST['payload'];
 	$payload = stripcslashes($payload);
 	$payload = json_decode($payload);
-
+echo("end2");
 	//log the request
 	file_put_contents($logLocation, $logheader, FILE_APPEND);
 	file_put_contents($logLocation, print_r($payload, true), FILE_APPEND);
