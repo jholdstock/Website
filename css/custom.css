@@ -81,10 +81,9 @@ body {
 }
 
 #copyright {
-	margin-top: 10px;
 	text-align: center;
 	color     : #888;
 	min-width        : 500px;
 	width: 70%;
-	margin: auto;
+	margin: 10px auto;
 }
