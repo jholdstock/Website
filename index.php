@@ -4,7 +4,7 @@
 	<head>
 		<title>Jamie Holdstock</title>
 		
-		<!-- Meta data -->
+		<!-- Metadata -->
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="" />
@@ -16,7 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/custom.css" />
 		<link rel="shortcut icon" href="img/favicon.ico" />
 		
-		<!-- Scripts -->
+		<!-- Script -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 		<script src="js/main.js"></script>
