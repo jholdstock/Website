@@ -1,11 +1,13 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+
 use Symfony\Component\HttpFoundation\Response;
 use Silex\Provider\TwigServiceProvider;
+use Silex\Application;
+use Silex\Provider\UrlGeneratorServiceProvider;
 
-$app = new Silex\Application();
-
+$app = new Application();
 
 //
 // REGISTER SERVICES
@@ -14,7 +16,7 @@ $app->register(new TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new UrlGeneratorServiceProvider());
 
 //
 // ROUTING
