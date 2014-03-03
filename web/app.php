@@ -1,5 +1,4 @@
 <?php
-echo "Hello"; die;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
