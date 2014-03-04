@@ -19,26 +19,33 @@ $app->register(new TwigServiceProvider(), array(
 $app->register(new UrlGeneratorServiceProvider());
 
 //
+// CONTEXT
+//
+$context = array(
+    "year" => date("Y")
+);
+
+//
 // ROUTING
 //
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('about.twig', array());
+$app->get('/', function () use ($app, $context) {
+    return $app['twig']->render('construction.twig', $context);
 })->bind("home");
 
-$app->get('/cv', function () use ($app) {
-    return $app['twig']->render('cv.twig', array());
+$app->get('/cv', function () use ($app, $context) {
+    return $app['twig']->render('cv.twig', $context);
 })->bind("cv");
 
-$app->get('/projects', function () use ($app) {
-    return $app['twig']->render('projects.twig', array());
+$app->get('/projects', function () use ($app, $context) {
+    return $app['twig']->render('projects.twig', $context);
 })->bind("projects");
 
-$app->get('/contact', function () use ($app) {
-    return $app['twig']->render('contact.twig', array());
+$app->get('/contact', function () use ($app, $context) {
+    return $app['twig']->render('contact.twig', $context);
 })->bind("contact");
 
-$app->get('/about', function () use ($app) {
-    return $app['twig']->render('about.twig', array());
+$app->get('/about', function () use ($app, $context) {
+    return $app['twig']->render('about.twig', $context);
 })->bind("about");
 
 //
