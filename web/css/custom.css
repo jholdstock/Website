@@ -5,7 +5,7 @@ html, body {
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #333333;
+	background: #111;
 	font-family: sans-serif;
 	font-size: 12pt;
 	font-weight: 300;
@@ -28,6 +28,16 @@ p {
 
 a:hover {
 	text-decoration: none;
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3OWEzNSIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2QyNmUxZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top,  rgba(247,154,53,0.8) 0%, rgba(210,110,31,0.8) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,154,53,0.8)), color-stop(100%,rgba(210,110,31,0.8))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(247,154,53,0.8) 0%,rgba(210,110,31,0.8) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(247,154,53,0.8) 0%,rgba(210,110,31,0.8) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(247,154,53,0.8) 0%,rgba(210,110,31,0.8) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(247,154,53,0.8) 0%,rgba(210,110,31,0.8) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf79a35', endColorstr='#ccd26e1f',GradientType=0 ); /* IE6-8 */
+
 }
 
 
@@ -76,7 +86,7 @@ a:hover {
 
 #header-wrapper
 {
-	background: #333333;
+	background: #111;
 }
 
 #header 
@@ -112,7 +122,7 @@ a:hover {
 
 #menu-wrapper
 {
-	background: #00AABB;
+	background: #4f453f;
 }
 
 #menu {
@@ -121,7 +131,6 @@ a:hover {
 
 #menu ul {
 	margin: 0;
-	padding: 0em 0;
 	list-style: none;
 	line-height: normal;
 	text-align: center;
@@ -134,11 +143,12 @@ a:hover {
 #menu a {
 	display: block;
 	letter-spacing: 1px;
-	padding: 15px 30px;
+	padding: 0.8em 2.5em 0em;
+	vertical-align: middle;
+	height: 2.2em;
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 0.80em;
 	font-weight: 600;
 	border: none;
 	color: #FFF;
@@ -149,7 +159,16 @@ a:hover {
 }
 
 #menu .current_page_item a {
-	background: #008C9A;
+	background: #f79a35; /* Old browsers */
+
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3OWEzNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMjZlMWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #f79a35 0%, #d26e1f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f79a35), color-stop(100%,#d26e1f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #f79a35 0%,#d26e1f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #f79a35 0%,#d26e1f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #f79a35 0%,#d26e1f 100%); /* IE10+ */
+background: linear-gradient(to bottom, #f79a35 0%,#d26e1f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f79a35', endColorstr='#d26e1f',GradientType=0 ); /* IE6-8 */
 }
 
 /** PAGE */
@@ -213,7 +232,7 @@ a:hover {
 
 #copyright
 {
-	padding: 5em 0em;
+	padding: 2.5em 0em;
 	letter-spacing: 0.20em;
 	text-align: center;
 	text-transform: uppercase;
