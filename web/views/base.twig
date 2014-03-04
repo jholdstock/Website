@@ -36,10 +36,6 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-
-		<script>
-		</script>
-
 	</head>
 
 	<body>
@@ -59,10 +55,10 @@
 			<div id="menu-wrapper">
 				<div id="menu" class="container">
 					<ul>
-						<li><a href="{{ url("about") }}" class="current_page_item">About</a></li>
-						<li><a href="{{ url("projects") }}">Projects</a></li>
-						<li><a href="{{ url("cv") }}">CV</a></li>
-						<li><a href="{{ url("contact") }}">Contact</a></li>
+						<li id="about"><a href="{{ url("about") }}">About</a></li>
+						<li id="projects"><a href="{{ url("projects") }}">Projects</a></li>
+						<li id="cv"><a href="{{ url("cv") }}">CV</a></li>
+						<li id="contact"><a href="{{ url("contact") }}">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -76,6 +72,21 @@
 		<div id="copyright" class="container">
 			<p>Copyright (c) {{ year }} Jamie Holdstock. All rights reserved.</p>
 		</div>
+
+		<script>
+			var set = false;
+			$("#menu li").each(function() {
+				if ($(location).attr('pathname') == "/"+$(this).attr("id"))
+				{
+					$(this).addClass("current_page_item");
+					set = true
+				}
+			});
+			if (set == false)
+			{
+				$("#menu #about").addClass("current_page_item");
+			}
+		</script>
 
 	</body>
 

@@ -22,14 +22,14 @@ $app->register(new UrlGeneratorServiceProvider());
 // CONTEXT
 //
 $context = array(
-    "year" => date("Y")
+    "year"    => date("Y")
 );
 
 //
 // ROUTING
 //
 $app->get('/', function () use ($app, $context) {
-    return $app['twig']->render('construction.twig', $context);
+    return $app['twig']->render('about.twig', $context);
 })->bind("home");
 
 $app->get('/cv', function () use ($app, $context) {

@@ -76,21 +76,19 @@ a:hover {
 
 #header-wrapper
 {
-	overflow: hidden;
 	background: #333333;
 }
 
 #header 
 {
 	position: relative;
-	overflow: hidden;
 	text-align: center;
 }
 
 #logo 
 {
-	width: 700px;
-	height: 75px;
+	width: 100%;
+	height: 5em;
 	margin: 0 auto;
 	padding: 1em 0em;
 	text-transform: uppercase;
@@ -99,7 +97,7 @@ a:hover {
 
 #logo h1
 {
-	font-size: 3em;
+	font-size: 2.6em;
 	letter-spacing: 0.20em;
 }
 
@@ -118,13 +116,12 @@ a:hover {
 }
 
 #menu {
-	overflow: hidden;
-	height: 70px;
+	height: 3em;
 }
 
 #menu ul {
 	margin: 0;
-	padding: 8px 0px 0px 0px;
+	padding: 0em 0;
 	list-style: none;
 	line-height: normal;
 	text-align: center;
@@ -137,7 +134,7 @@ a:hover {
 #menu a {
 	display: block;
 	letter-spacing: 1px;
-	padding: 20px 40px;
+	padding: 15px 30px;
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
@@ -160,7 +157,6 @@ a:hover {
 #page
 {
 	position: relative;
-	overflow: hidden;
 	padding: 1em 0em 1em 0em;
 }
 
@@ -217,7 +213,6 @@ a:hover {
 
 #copyright
 {
-	overflow: hidden;
 	padding: 5em 0em;
 	letter-spacing: 0.20em;
 	text-align: center;
