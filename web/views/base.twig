@@ -11,6 +11,8 @@
 		<meta name="keywords" content="" />
 
 		<!-- Style -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/vendor/main.css" />
 		<link rel="stylesheet" type="text/css" href="css/vendor/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/custom.css" />
@@ -19,9 +21,9 @@
 		<!-- Script -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
-        	window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
+        	window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
         </script>
-
+		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 		
 		<script>
@@ -36,6 +38,7 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+
 	</head>
 
 	<body>
@@ -51,43 +54,60 @@
 				</div>
 			</div>
 
+			<nav class="navbar navbar-inverse" role="navigation" >
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_bar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
 
-			<div id="menu-wrapper">
-				<div id="menu" class="container">
-					<ul>
-						<li id="about"><a href="{{ url("about") }}">About</a>
-						<li id="projects"><a href="{{ url("projects") }}">Projects</a>
-						<li id="cv"><a href="{{ url("cv") }}">CV</a>
-						<li id="contact"><a href="{{ url("contact") }}">Contact</a>
-					</ul>
+					<div class="collapse navbar-collapse" id="nav_bar">
+						<ul class="nav navbar-nav">
+							<li id="about"><a href="{{ url("about") }}">About</a></li>
+							<li id="cv"><a href="{{ url("cv") }}">CV</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li id="projects"><a href="{{ url("projects") }}">Project</a></li>
+									<li><a href="{{ url("projects") }}">Project</a></li>
+									<li><a href="{{ url("projects") }}">Project</a></li>
+								</ul>
+							</li>
+							<li id="contact"><a href="{{ url("contact") }}">Contact</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-
+			</nav>
 
 			<div id="page" class="container">
 				{% block content %}{% endblock %}
 			</div>
-		</div>
-			
-		<div id="copyright" class="container">
-			<p>Copyright (c) {{ year }} Jamie Holdstock. All rights reserved.</p>
-		</div>
 
+		</div>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container">
+				<p class="navbar-text">Copyright (c) {{ year }} Jamie Holdstock. All rights reserved.</p>
+			</div>
+		</nav>
+		
 		<script>
 			var set = false;
-			$("#menu li").each(function() {
+			$("#nav_bar li").each(function() {
 				if ($(location).attr('pathname') == "/"+$(this).attr("id"))
 				{
-					$(this).addClass("current_page_item");
+					$(this).addClass("active");
 					set = true
 				}
 			});
 			if (set == false)
 			{
-				$("#menu #about").addClass("current_page_item");
+				$("#nav_bar #about").addClass("active");
 			}
 		</script>
-
 	</body>
 
 </html>
