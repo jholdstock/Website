@@ -3,8 +3,8 @@ html, body {
 }
 
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	background: #111;
 	font-family: sans-serif;
 	font-size: 12pt;
@@ -18,7 +18,7 @@ h1, h2, h3 {
 }
 
 p, ol, ul {
-	margin: 0px;
+	margin: 0;
 }
 
 p {
@@ -83,12 +83,18 @@ background: linear-gradient(to bottom,  rgba(247,154,53,0.8) 0%,rgba(210,110,31,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf79a35', endColorstr='#ccd26e1f',GradientType=0 ); /* IE6-8 */
 }
 
+#copyright {
+	text-align: center;
+	color: #888;
+	margin: 1em auto 3em;
+}
+
 #wrapper {
 	background-color: #FFFAED;
 }
 
 .container {
-	margin: 0px auto;
+	margin: 0 auto;
 }
 
 #header 
