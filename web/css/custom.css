@@ -123,3 +123,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf79a35', e
 	position: relative;
 	padding: 0em 1em 5em;
 }
+
+.image-container {
+	margin: 0px auto;	
+	text-align: center;
+}

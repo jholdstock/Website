@@ -37,8 +37,12 @@ $app->get('/cv', function () use ($app, $context) {
 })->bind("cv");
 
 $app->get('/projects', function () use ($app, $context) {
-    return $app['twig']->render('projects.twig', $context);
+    return $app['twig']->render('projects/projects.twig', $context);
 })->bind("projects");
+
+$app->get('/hambaguette', function () use ($app, $context) {
+    return $app['twig']->render('projects/hambaguette.twig', $context);
+})->bind("hambaguette");
 
 $app->get('/contact', function () use ($app, $context) {
     return $app['twig']->render('contact.twig', $context);
