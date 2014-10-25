@@ -1,8 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/TflPage.php';
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Application;
 use Silex\Provider\UrlGeneratorServiceProvider;
@@ -28,6 +30,18 @@ $context = array(
 //
 // ROUTING
 //
+
+$app->get('/tfl', function (Request $request) use ($app, $context) {
+    
+    $tfl = new TflPage();
+    $params = $request->query->all();
+    $journeys = $tfl->work($params["password"]);
+    $context = array_merge($context, array("journeys" => $journeys));
+    
+    return $app['twig']->render('tfl.twig', $context);
+})->bind("tfl");
+
+
 $app->get('/', function () use ($app, $context) {
     return $app['twig']->render('construction.twig', $context);
 })->bind("home");

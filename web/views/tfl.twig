@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Under Construction</title>
+		
+		<!-- Metadata -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<!-- Style -->
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		
+		<!-- Script -->
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-48413007-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</head>
+
+	<body>
+
+		<h1>Journey History</h1>
+		{% for j in journeys %}
+		<table>
+			<tr><td>Date</td><td>{{ j.date }}</td></tr>
+			<tr><td>From</td><td>{{ j.source.name }}</td></tr>
+			<tr><td>To</td><td>{{ j.destination.name }}</td></tr>
+			<tr><td>Start</td><td>{{ j.start.time }}</td></tr>
+			<tr><td>End</td><td>{{ j.end.time }}</td></tr>
+			<tr><td>Cost</td><td>{{ j.cost }}</td></tr>
+		</table>
+		</br></br>
+		{% endfor %}
+
+	</body>
+
+</html>
