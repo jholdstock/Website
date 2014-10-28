@@ -12,7 +12,8 @@
 
 		<!-- Style -->
 		<link rel="shortcut icon" href="img/favicon.ico" />
-		
+		<link rel="stylesheet" type="text/css" href="css/tfl.css" />
+
 		<!-- Script -->
 		<script>
 			var _gaq = _gaq || [];
@@ -31,17 +32,14 @@
 	<body>
 
 		<h1>Journey History</h1>
+
+			<table>
+				<tr><th>Date</th><th>From</th><th>To</th><th>Start</th><th>End</th><th>Cost</th><th>Duration</th></tr>
 		{% for j in journeys %}
-		<table>
-			<tr><td>Date</td><td>{{ j.date }}</td></tr>
-			<tr><td>From</td><td>{{ j.source.name }}</td></tr>
-			<tr><td>To</td><td>{{ j.destination.name }}</td></tr>
-			<tr><td>Start</td><td>{{ j.start.time }}</td></tr>
-			<tr><td>End</td><td>{{ j.end.time }}</td></tr>
-			<tr><td>Cost</td><td>{{ j.cost }}</td></tr>
-		</table>
-		</br></br>
+				<tr><td>{{ j.date }}</td><td>{{ j.source }}</td><td>{{ j.destination }}</td><td>{{ j.start }}</td><td>{{ j.end }}</td><td>{{ j.cost }}</td><td>{{ j.expectedDuration }}</td></tr>
 		{% endfor %}
+			</table>
+			</br></br>
 
 	</body>
 
