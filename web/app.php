@@ -30,17 +30,11 @@ $context = array(
 //
 // ROUTING
 //
+$app->get('/rpi', function (Request $request) use ($app, $context) {
+    return $app->redirect(file_get_contents("deluge_ip"));
+})->bind("rpi");
 
-$app->get('/ip', function (Request $request) use ($app, $context) {
-    $context = array(
-        "year"    => file_get_contents("deluge_ip")
-    );
-
-    return $app['twig']->render('projects/hambaguette.twig', $context);
-})->bind("ip");
-
-$app->get('/deluge_ip', function (Request $request) use ($app, $context) {
-      
+$app->get('/set_rpi_ip', function (Request $request) use ($app, $context) {
     $params = $request->query->all();
     $ip = $params["ip"];
     file_put_contents("deluge_ip", $ip);
