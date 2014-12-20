@@ -37,7 +37,7 @@ $app->get('/ip', function (Request $request) use ($app, $context) {
     );
 
     return $app['twig']->render('projects/hambaguette.twig', $context);
-})->bind("tfl");
+})->bind("ip");
 
 $app->get('/deluge_ip', function (Request $request) use ($app, $context) {
       
@@ -46,7 +46,7 @@ $app->get('/deluge_ip', function (Request $request) use ($app, $context) {
     file_put_contents("deluge_ip", $ip);
     
     return $app['twig']->render('construction.twig', $context);
-})->bind("tfl");
+})->bind("deluge_ip");
 
 $app->get('/tfl', function (Request $request) use ($app, $context) {
     
