@@ -31,6 +31,23 @@ $context = array(
 // ROUTING
 //
 
+$app->get('/ip', function (Request $request) use ($app, $context) {
+    $context = array(
+        "year"    => file_get_contents("deluge_ip")
+    );
+
+    return $app['twig']->render('projects/hambaguette.twig', $context);
+})->bind("tfl");
+
+$app->get('/deluge_ip', function (Request $request) use ($app, $context) {
+      
+    $params = $request->query->all();
+    $ip = $params["ip"];
+    file_put_contents("deluge_ip", $ip);
+    
+    return $app['twig']->render('construction.twig', $context);
+})->bind("tfl");
+
 $app->get('/tfl', function (Request $request) use ($app, $context) {
     
     $tfl = new TflPage();
