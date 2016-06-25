@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/TflPage.php';
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,29 +29,6 @@ $context = array(
 //
 // ROUTING
 //
-$app->get('/rpi', function (Request $request) use ($app, $context) {
-    return $app->redirect(file_get_contents("deluge_ip"));
-})->bind("rpi");
-
-$app->get('/set_rpi_ip', function (Request $request) use ($app, $context) {
-    $params = $request->query->all();
-    $ip = $params["ip"];
-    file_put_contents("deluge_ip", $ip);
-    
-    return $app['twig']->render('construction.twig', $context);
-})->bind("deluge_ip");
-
-$app->get('/tfl', function (Request $request) use ($app, $context) {
-    
-    $tfl = new TflPage();
-    $params = $request->query->all();
-    $journeys = $tfl->work($params["password"]);
-    $context = array_merge($context, array("journeys" => $journeys));
-    
-    return $app['twig']->render('tfl.twig', $context);
-})->bind("tfl");
-
-
 $app->get('/', function () use ($app, $context) {
     return $app['twig']->render('construction.twig', $context);
 })->bind("home");
