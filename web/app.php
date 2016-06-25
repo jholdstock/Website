@@ -23,7 +23,7 @@ $app->register(new UrlGeneratorServiceProvider());
 // CONTEXT
 //
 $context = array(
-    "year"    => date("Y")
+    "year" => date("Y")
 );
 
 //
@@ -32,10 +32,6 @@ $context = array(
 $app->get('/', function () use ($app, $context) {
     return $app['twig']->render('construction.twig', $context);
 })->bind("home");
-
-$app->get('/cv', function () use ($app, $context) {
-    return $app['twig']->render('cv.twig', $context);
-})->bind("cv");
 
 $app->get('/projects', function () use ($app, $context) {
     return $app['twig']->render('projects/projects.twig', $context);
