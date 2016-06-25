@@ -20,34 +20,11 @@ $app->register(new TwigServiceProvider(), array(
 $app->register(new UrlGeneratorServiceProvider());
 
 //
-// CONTEXT
-//
-$context = array(
-    "year" => date("Y")
-);
-
-//
 // ROUTING
 //
-$app->get('/', function () use ($app, $context) {
-    return $app['twig']->render('construction.twig', $context);
+$app->get('/', function () use ($app) {
+    return $app['twig']->render('construction.twig');
 })->bind("home");
-
-$app->get('/projects', function () use ($app, $context) {
-    return $app['twig']->render('projects/projects.twig', $context);
-})->bind("projects");
-
-$app->get('/hambaguette', function () use ($app, $context) {
-    return $app['twig']->render('projects/hambaguette.twig', $context);
-})->bind("hambaguette");
-
-$app->get('/contact', function () use ($app, $context) {
-    return $app['twig']->render('contact.twig', $context);
-})->bind("contact");
-
-$app->get('/about', function () use ($app, $context) {
-    return $app['twig']->render('about.twig', $context);
-})->bind("about");
 
 //
 // ERROR HANDLER
