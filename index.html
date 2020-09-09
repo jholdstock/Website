@@ -1,243 +1,207 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en">
 <head>
     <title>Jamie Holdstock</title>
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="Personal website for Jamie Holdstock - Software developer from London">
     <meta name="author" content="Jamie Holdstock">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link href='///fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='///fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    
-    <!-- github calendar css -->
-    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css"/>
-    <!-- github acitivity css -->
-    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script>
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-77721271-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
+
+    <!-- Begin favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#2b5797">
+    <!-- End favicon -->
+
+    <style>
+        @font-face {
+            font-family: 'Bungee Inline';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Bungee Inline'), local('BungeeInline-Regular'), url(assets/fonts/bungeeinline.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Bungee Outline';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Bungee Outline'), local('BungeeOutline-Regular'), url(assets/fonts/bungeeoutline.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden;
+        }
+
+        #noscript {
+            padding: 14px;
+        }
+
+        .scanlines {
+            overflow: hidden;
+            mix-blend-mode: difference;
+        }
+
+        .scanlines::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(255, 255, 255, 0.05) .5%,
+                transparent 1%
+            );
+
+            animation: fudge 7s ease-in-out alternate infinite;
+        }
+    </style>
 </head> 
 
 <body>
-    
-    <header class="header">
-        <div class="container">                       
-            <img class="profile-image img-responsive pull-left" src="assets/images/profile.png" alt="Jamie Holdstock" />
-            <div class="profile-content pull-left">
-                <h1 class="name">Jamie Holdstock</h1>
-                <h2 class="desc">Software Developer</h2>   
-                <ul class="social list-inline">
-                    <li><a target="_blank" href="https://www.facebook.com/jamie.holdstock.3"><i class="fa fa-facebook"></i></a></li>
-                    <li><a target="_blank" href="https://www.linkedin.com/in/jamieholdstock"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="last-item"><a target="_blank" href="https://github.com/jholdstock"><i class="fa fa-github-alt"></i></a></li>                  
-                </ul> 
-            </div>
+    <noscript>
+        <div id="noscript">
+            Your browser isn't running JavaScript.<br />
+            Don't you trust me? :(<br />
+            Or are you just browing the web on a potato?<br />
+            You're not missing much tbh.<br />
+            There's nothing on this page except some pointless animations which will spin your CPU.
         </div>
-    </header>
+    </noscript>
+    <canvas id="glitch-canvas" style="display: none;"></canvas>
+    <div class="scanlines" style="display: none;"></div>
     
-    <div class="container sections-wrapper">
-        <div class="row">
-            <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section class="about section">
-                    <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
-                        <div class="content">
-                            <p>Hello, I'm Jamie Holdstock, a software developer based in London. I have worked on most areas of a typical software stack and I'm comfortable in Windows or Linux environments. Most of my professional experience lies in web service development using Java and web development using PHP, HTML5 and jQuery.</p>
-                            <p>I currently lead a team of developers at <a target="_blank" href="https://www.openbet.com/">OpenBet Technologies</a> in West London.</p>
-                            <p>You can catch up on some of my recent recreational work below and there are a couple of ways to contact me above.</p>
-                        </div>
-                    </div>
-                </section>
-    
-               <section class="latest section">
-                    <div class="section-inner">
-                        <h2 class="heading">Latest Projects</h2>
-                        <div class="content">    
-                                               
-                            <div class="item featured text-center">
-                                <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.jamieholdstock.crossworddictionary" target="_blank">Cryptic Crossword Tutor</a></h3>
-                                <p class="summary">Android application teaching how to solve cryptic crosswords</p>
-                                <div class="featured-image">
-                                    <a href="https://play.google.com/store/apps/details?id=com.jamieholdstock.crossworddictionary" target="_blank">
-                                    <img class="img-responsive project-image" src="assets/images/projects/project-featured-2.png" alt="Cryptic Crossword Tutor" />
-                                    </a>
-                                    <div class="ribbon">
-                                        <div class="text">New</div>
-                                        </div>
-                                    </div>
-                                    
-                                <div class="desc text-left">
-                                    Cryptic Crossword Tutor is the ultimate toolkit to learn how solve <a href="https://en.wikipedia.org/wiki/Cryptic_crossword">cryptic crosswords</a>. It is an Android application which includes tutorials teaching how to solve cryptic clues, useful tools such as an anagram solver, a database of cryptic "indicator" words, and it is integrated with an online database of thousands of previously solved clues.
-                                </div>
-                                <a class="btn btn-cta-secondary" href="https://play.google.com/store/apps/details?id=com.jamieholdstock.crossworddictionary" target="_blank"><i class="fa fa-download"></i>See it on Google Play</a>                 
-                            </div>
-                            <hr class="divider" />
-                            <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.gorgeousgrooms.co.uk/" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/gg-project.png" alt="Gorgeous Grooms Website" />
-                                </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://www.gorgeousgrooms.co.uk/" target="_blank">Gorgeous Grooms Website</a></h3>
-                                    <p>Gorgeous Grooms is a dog grooming and walking business based in Cheltenham, UK. They were looking to update their website with a fresh design which would work well on both desktop and mobile.</p>
-                                    <p><a class="more-link" href="http://www.gorgeousgrooms.co.uk/" target="_blank"><i class="fa fa-external-link"></i> Visit the site</a></p>
-                                </div>
-                            </div>
-                            <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://play.google.com/store/apps/details?id=com.jamieholdstock.dcrwidgets" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-6.png" alt="Decred Widgets" />
-                                </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.jamieholdstock.dcrwidgets" target="_blank">Decred Widgets</a></h3>
-                                    <p><a target="_blank" href="https://decred.org/">Decred</a> is a <a target="_blank" href="https://en.wikipedia.org/wiki/Cryptocurrency">cryptocurrency</a> which launched in February 2016.</p>
-                                    <p>I have created an Android app which allows the user to add homescreen widgets displaying the market value of Decred and essential statistics about the Decred network.</p>
-                                    <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.jamieholdstock.dcrwidgets" target="_blank"><i class="fa fa-external-link"></i> See it on Google Play</a></p>
-                                </div>
-                            </div>
-                            <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.spiritdesignuk.com/" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-5.png" alt="Spirit Design Website" />
-                                </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://www.spiritdesignuk.com/" target="_blank">Spirit Design Website</a></h3>
-                                    <p>Spirit Design are a London based company specialising in designing corporate events, live concerts and tours. Using the <a target="_blank" href="http://silex.sensiolabs.org/">Silex framework</a>, I scratch built them a new website which includes basic CMS functions to modify images and text without having to modify raw HTML.</p>
-                                    <p><a class="more-link" href="http://www.spiritdesignuk.com/" target="_blank"><i class="fa fa-external-link"></i> Visit the site</a></p>
-                                </div>
-                            </div>
-                           <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="https://chrome.google.com/webstore/detail/teamcity-status-monitor/ojkkaphfgjpbckihnbbminnoenhndeje" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/project-1.png" alt="TeamCity Status Monitor" />
-                                </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="https://chrome.google.com/webstore/detail/teamcity-status-monitor/ojkkaphfgjpbckihnbbminnoenhndeje" target="_blank">TeamCity Status Monitor</a></h3>
-                                    <p>An extension for Google Chrome which displays the status of your <a href="">TeamCity</a> continuous integration server in a big-screen dashboard. Specifically designed to be simplistic in both it's appearance and it's usage. Configurable options are kept to bare minimum.</p>
-                                    <p><a class="more-link" href="https://chrome.google.com/webstore/detail/teamcity-status-monitor/ojkkaphfgjpbckihnbbminnoenhndeje" target="_blank"><i class="fa fa-external-link"></i> See it in the Chrome Store</a></p>
-                                </div>
-                            </div>
+    <script>
+        const canvas = document.querySelector("#glitch-canvas");
+        const ctx = canvas.getContext("2d");
+        const colors = [
+        "#b4b2b5",
+        "#dfd73f",
+        "#6ed2dc",
+        "#66cf5d",
+        "#c542cb",
+        "#d0535e",
+        "#3733c9"];
 
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                
-                <aside class="info aside section">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker fa-lg"></i><span class="sr-only">Location:</span>London, UK</li>
-                            </ul>
-                        </div>
-                    </div>
-                </aside>
+        let linePos = 0,
+        rAF,
+        topFont,
+        bottomFont,
+        heightMod;
 
-                 <aside class="skills aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                           
-                            <div class="skillset">
-                               
-                                <div class="item">
-                                    <h3 class="level-title">Java<span class="level-label">Pro</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="95%">
-                                        </div>                                      
-                                    </div>
-                                </div>
+        canvas.style.display = "block";
+        document.querySelector(".scanlines").style.display = "block";
 
-                                <div class="item">
-                                    <h3 class="level-title">Web Development<span class="level-label">Experienced</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="70%">
-                                        </div>                                      
-                                    </div>
-                                </div>
-                                
-                                <div class="item">
-                                    <h3 class="level-title">.NET<span class="level-label">Experienced</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="65%">
-                                        </div>                                      
-                                    </div>
-                                </div>
-                                
-                                <div class="item">
-                                    <h3 class="level-title">Android<span class="level-label">Getting there</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="45%">
-                                        </div>                                      
-                                    </div>
-                                </div>
+        function size() {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
 
-                            </div>              
-                        </div>
-                    </div>
-                </aside>
+            topFont = "16vh";
+            bottomFont = "14vh";
+            heightMod = 12;
+            
+            if (canvas.width < 800) {
+                topFont = "12vh";
+                bottomFont = "10vh";
+                heightMod = 15;
+            }
+            if (canvas.width < 600) {
+                topFont = "10vh";
+                bottomFont = "8vh";
+                heightMod = 20;
+            }
+            if (canvas.width < 450) {
+                topFont = "8vh";
+                bottomFont = "6vh";
+                heightMod = 26;
+            }
+        }
 
-                <aside class="github aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">My GitHub</h2>
-                                                
-                        <div id="github-graph" class="github-graph">
+        function texts(color) {
+        ctx.font = topFont + " Bungee Inline";
+        ctx.shadowBlur = 30;
+        ctx.shadowColor = color;
+        ctx.fillStyle = color;
+        ctx.setTransform(1, -0.15, 0, 1, 0, -10);
+        ctx.fillText("Jamie", innerWidth / 2, innerHeight / 2 - 5);
 
-                        </div>
+        ctx.fillStyle = "white";
+        ctx.shadowBlur = 30;
+        ctx.shadowColor = color;
+        ctx.fillText("Jamie", innerWidth / 2, innerHeight / 2);
 
-                        
-                        <div id="ghfeed" class="ghfeed">
-                        </div>
-                        
-                    </div>
-                </aside>
-              
-            </div>
-        </div>
-    </div>
-    
-    
-    <footer class="footer">
-        <div class="container text-center">
-                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a></small>
-        </div>
-    </footer>
- 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <!-- github calendar plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
-    <!-- github activity plugin -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
-    <!-- custom js -->
-    <script type="text/javascript" src="assets/js/main.js"></script>            
+        ctx.font = bottomFont + " Bungee Outline";
+        ctx.shadowBlur = 30;
+        ctx.shadowColor = color;
+        ctx.fillStyle = "#fff";
+        ctx.setTransform(1, -0.15, 0, 1, 0, -10);
+        ctx.fillText(
+        "Holdstock",
+        innerWidth / 2,
+        innerHeight / 2 + innerHeight / heightMod);
+
+
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        }
+
+        function glitch() {
+        rAF = window.requestAnimationFrame(glitch);
+
+        ctx.fillStyle = "#1a191c";
+        ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+        texts(colors[Math.floor(Math.random() * 7)]);
+        ctx.shadowBlur = 0;
+        ctx.shadowColor = "none";
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        for (let i = 0; i < 1000; i++) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.01})`;
+            ctx.fillRect(
+            Math.floor(Math.random() * innerWidth),
+            Math.floor(Math.random() * innerHeight),
+            Math.floor(Math.random() * 30) + 1,
+            Math.floor(Math.random() * 30) + 1);
+
+
+            ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
+            ctx.fillRect(
+            Math.floor(Math.random() * innerWidth),
+            Math.floor(Math.random() * innerHeight),
+            Math.floor(Math.random() * 25) + 1,
+            Math.floor(Math.random() * 25) + 1);
+
+        }
+
+        ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
+        ctx.fillRect(
+        Math.random() * innerWidth,
+        Math.random() * innerHeight,
+        Math.random() * innerWidth,
+        Math.random() * innerHeight);
+
+        ctx.setTransform(1, 0, 0, .8, .2, 0);
+        }
+
+        size();
+        glitch();
+
+        window.addEventListener('resize', () => {
+            size();
+        });
+    </script>
 </body>
 </html> 
 
